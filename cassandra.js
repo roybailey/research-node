@@ -74,7 +74,7 @@ var createColumnFamily = function () {
 
 
 var insertData = function () {
-    var cqlInsertProperty =
+    var cqlInsertSampleData =
         "INSERT INTO nodespace.sample (" +
         "   primaryRowKey, secondaryRowKey, " +
         "   primaryColumnKey, secondaryColumnKey," +
@@ -88,7 +88,7 @@ var insertData = function () {
     var amap = {"key1": "value1", "key2": "value2"};
 
     client.execute(
-        cqlInsertProperty,
+        cqlInsertSampleData,
         [   'row1', 'part1', cassandra.types.timeuuid(), 'columnGroup',
             new Date(), true, new cassandra.types.Long.fromString("876543210987654321"),
             cassandra.types.uuid(), 1.5, 1.1234567890123456789,
@@ -102,10 +102,12 @@ var insertData = function () {
         ]},
         function (err, result) {
             if (err) {
-                console.log('Insert Property Failed: ' + JSON.stringify(err));
-                console.log('Insert Property Failed: ' + err.message);
+                console.log('Insert Sample Data Failed: ' + JSON.stringify(err));
+                // needed to add this to get the error message as sometimes stringify didn't include it
+                console.log('Insert Sample Data Failed: ' + err.message);
+                process.exit(0);
             } else {
-                console.log('Inserted Property: ' + JSON.stringify(result));
+                console.log('Inserted Sample Data: ' + JSON.stringify(result));
                 selectData();
             }
         }
@@ -114,18 +116,18 @@ var insertData = function () {
 
 
 var selectData = function () {
-    var cqlSelectProperty =
+    var cqlSelectSampleData =
         "SELECT * FROM nodespace.sample " +
         "WHERE primaryRowKey = ? and secondaryRowKey = ?";
 
     client.execute(
-        cqlSelectProperty, ['row1','part1'],
+        cqlSelectSampleData, ['row1','part1'],
         function (err, result) {
             if (err) {
-                console.log('Select Property Failed: ' + JSON.stringify(err));
-                console.log('Select Property Failed: ' + err.message);
+                console.log('Select Sample Data Failed: ' + JSON.stringify(err));
+                console.log('Select Sample Data Failed: ' + err.message);
             } else {
-                console.log('Selected Property: ' + JSON.stringify(result.rows[0]));
+                console.log('Selected Sample Data: ' + JSON.stringify(result.rows[0]));
                 // notice the names are all lowercase
                 console.log('primaryRowKey      : ' + result.rows[0]['primaryrowkey']);
                 console.log('secondaryRowKey    : ' + result.rows[0]['secondaryrowkey']);

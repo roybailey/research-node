@@ -1,0 +1,26 @@
+~/.../cassandra/bin > ./cassandra-cli
+Connected to: "Test Cluster" on 127.0.0.1/9160
+Welcome to Cassandra CLI version 2.0.7
+...
+[default@unknown] use nodespace;
+Authenticated to keyspace: nodespace
+[default@nodespace] list sample;
+Using default limit of 100
+Using default cell limit of 100
+-------------------
+RowKey: row1:part1
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:, value=, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:abigint, value=0c2a1b6801330cb1, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:aboolean, value=01, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:adecimal, value=3ff1f9add3746f66, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:adouble, value=3ff8000000000000, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:alist:d3e11c2071a711e4814d25b14fe8537a, value=787878, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:alist:d3e11c2171a711e4814d25b14fe8537a, value=6a6a6a, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:alist:d3e11c2271a711e4814d25b14fe8537a, value=747474, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:amap:6b657931, value=76616c756531, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:amap:6b657932, value=76616c756532, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:aset:616263, value=, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:aset:646566, value=, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:aset:676869, value=, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:atime, value=00000149d38036df, ...)
+=> (name=d3e07fe0-71a7-11e4-b8d7-e5dfff278e51:columnGroup:auuid, value=d439e4257f95494a84f727b9a93abb3a, ...)
