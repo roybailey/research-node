@@ -8,4 +8,4 @@ what | description
 `node src/<something>/<script>.js` | to run something
 `data/*` | contains any test data files
 
-No guarantees anything still works.
+Please see license.  No guarantees anything still works.
