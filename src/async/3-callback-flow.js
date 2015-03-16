@@ -71,30 +71,43 @@ function done (err, res) {
 }
 
 function flow(steps,done) {
-    function factory() {
+    function next() {
+        // stores whether a callback has already been used
         var used;
-        return function next() {
+        // uses a factory so that 'used' is local to each step
+        return function factory() {
             console.log("NEXT "+steps.length);
+            // after one use, next becomes a no-op
             if (used) {
                 return;
             }
             used = true;
+            // gets the next step and removes it from the list
             var step = steps.shift();
+            // are there more steps?
             if (step) {
+                // casts arguments to an array
                 var args = Array.prototype.slice.call(arguments);
+                // gets the error argument, remove it from the arguments
                 var err = args.shift();
+                // short circuits if error was provided
                 if (err) {
                     done(err, null);
                     return;
                 }
-                args.push(factory());
+                // adds a completion callback to the arguments
+                args.push(next());
+                // invokes the step passing the needed arguments
                 step.apply(null, args);
             } else {
+                // call done, no need to manipulate arguments
                 done.apply(null, arguments);
             }
         };
     }
-    var start = factory();
+    // creates the first step function
+    var start = next();
+    // executes the step, doesn't provide additional arguments
     start();
 }
 
