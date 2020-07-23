@@ -23,19 +23,19 @@
   "dependencies": {
     "async": "^0.9.0",
     "cassandra-driver": "^1.0.1",
-    "csv": "^0.4.1",
-    "ecstatic": "^0.5.2",
+    "csv": "^5.3.2",
+    "ecstatic": "^4.1.4",
     "express": "^4.1.2",
-    "lodash": "^2.4.1",
-    "mathjs": "^1.0.1"
+    "lodash": "^4.17.19",
+    "mathjs": "^7.1.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.2.1",
     "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.12.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-curl": "^2.0.3",
     "http": "0.0.0",
     "request": "^2.55.0"
