@@ -27,7 +27,7 @@
     "ecstatic": "^4.1.4",
     "express": "^4.1.2",
     "lodash": "^4.17.19",
-    "mathjs": "^7.1.0"
+    "mathjs": "^7.5.1"
   },
   "devDependencies": {
     "grunt": "^1.2.1",
