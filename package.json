@@ -30,7 +30,7 @@
     "mathjs": "^7.1.0"
   },
   "devDependencies": {
-    "grunt": "^1.2.1",
+    "grunt": "^1.5.2",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-less": "^2.0.0",
